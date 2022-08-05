@@ -6,4 +6,4 @@ class Visit extends Modal{
 
 }
 
-export default Visit;
+export default Visit
