@@ -46,7 +46,7 @@ logOutBtn.addEventListener('click',() =>{
   document.location.reload()
  
 })
-    renderCardsAfterReload()
+   // renderCardsAfterReload()
 }
 
 
