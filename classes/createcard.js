@@ -1,5 +1,5 @@
 
-//import getUrgency from "../functions/getUrgency.js"
+import getUrgency from "../functions/getUrgency.js"
 import Modal from "./modal.js"
 import VisitCardiologist from "./visitCardiologist.js"
 import VisitDentist from "./visitDentist.js"
@@ -37,7 +37,7 @@ import VisitTherapist from "./visitTherapist.js"
        }
        if(formType === 'Кардиолог'){
      new VisitCardiologist().render('.modal__main-container')
-  
+    //getUrgency() 
   }
      else if(formType === 'Терапевт'){ new VisitTherapist().render('.modal__main-container')}
      else{ new VisitDentist().render('.modal__main-container')}
