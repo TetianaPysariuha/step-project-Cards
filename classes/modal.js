@@ -2,7 +2,7 @@ class Modal{
     constructor(submitFuncton) {
         this._modalElement = document.createElement('div');
         this._modalBackgroundContainer = document.createElement('div');
-        this._modalMainContainer = document.createElement('div');
+        this._mainContainer = document.createElement('div');
         this._modalCloseBtn = document.createElement('button');
     }
 
@@ -11,18 +11,18 @@ class Modal{
         this._modalBackgroundContainer.className = 'modal__background';
         this._modalBackgroundContainer.addEventListener('click', (event) => {
             if(event.target === this._modalBackgroundContainer){
-                this.deleteNode();
+                this.closeModal();
             }});
         this._modalMainContainer.className = 'modal__main-container flex-column';
         this._modalCloseBtn.className = 'modal__close-btn flex-column';
         this._modalCloseBtn.innerText = 'X';
-        this._modalCloseBtn.addEventListener('click', this.deleteNode.bind(this));
-        this._modalMainContainer.append(this._modalCloseBtn);
-        this._modalBackgroundContainer.append(this._modalMainContainer);
+        this._modalCloseBtn.addEventListener('click', this.closeModal.bind(this));
+        this._mainContainer.append(this._modalCloseBtn);
+        this._modalBackgroundContainer.append(this._mainContainer);
         this._modalElement.append(this._modalBackgroundContainer);
     }
 
-    deleteNode(){
+    closeModal(){
         this._modalElement.remove();
     }
 
