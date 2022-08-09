@@ -2,11 +2,11 @@ import Card from "./classes/card.js";
 
 import createCard from "./classes/createcard.js";
 import Login from "./classes/login.js";
-import getUrgency from "./functions/getUrgency.js";
+//import getUrgency from "./functions/getUrgency.js";
 import createLogin from "./functions/createLogin.js";
 import createCards from "./functions/createCards.js";
 import renderCardsAfterReload from "./functions/renderCardsAfterReload.js";
-import filterCards from "./functions/filterFuction.js";
+//import filterCards from "./functions/filterFuction.js";
 
 
 
