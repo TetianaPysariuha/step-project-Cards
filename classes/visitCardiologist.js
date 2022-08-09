@@ -4,7 +4,6 @@ import Card from "./card.js";
 import postNewCards from "../functions/postCardFunc.js";
 import renderAfterReloadwithAddedCard from "../functions/renderCardsAfterAddNewCardAndReload.js";
 
-
 class VisitCardiologist extends Visit{
 constructor(){
     super()
@@ -30,21 +29,11 @@ e.preventDefault()
 
 const input = document.querySelectorAll('input')
 
-
-
-
-
-   
-  postNewCards({doctor:'cardiologist',name:document.querySelector('#name').value,age:document.querySelector('#age').value,pressure:document.querySelector('#pressure').value,weight:document.querySelector('#weight').value,purpose:document.querySelector('#purpose').value,description:document.querySelector('#description').value,urgency: document.querySelector('.visit_select').selectedIndex }) 
+ postNewCards({doctor:'cardiologist',name:document.querySelector('#name').value,age:document.querySelector('#age').value,pressure:document.querySelector('#pressure').value,weight:document.querySelector('#weight').value,purpose:document.querySelector('#purpose').value,description:document.querySelector('#description').value,urgency: document.querySelector('.visit_select').selectedIndex }) 
  
-    
-       
-       
-        
-      })
+ })
   
 }
-
 
 render(selector){
     this.createElements()
