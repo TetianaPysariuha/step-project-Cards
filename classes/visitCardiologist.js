@@ -33,18 +33,7 @@ const input = document.querySelectorAll('input')
 
 
 
-/*const createCard = async () =>{
-    console.log('ok')
-    console.log(document.querySelector('#pressure').value)
-  
-    const {status,data} =  await instance.post('',{doctor:'cardiologist',name:document.querySelector('#name').value,age:document.querySelector('#age').value,pressure:document.querySelector('#pressure').value,weight:document.querySelector('#weight').value,purpose:document.querySelector('#purpose').value,description:document.querySelector('#description').value,urgency: document.querySelector('.visit_select').selectedIndex })
-       console.log(data)
-      const newCard = new Card(data.id,data.name,data.doctor,data.purpose,data.description,data.urgency)
-      newCard.render('.container')
-      localStorage.setItem('newcard',newCard)
 
-   }
-   createCard()*/
    
   postNewCards({doctor:'cardiologist',name:document.querySelector('#name').value,age:document.querySelector('#age').value,pressure:document.querySelector('#pressure').value,weight:document.querySelector('#weight').value,purpose:document.querySelector('#purpose').value,description:document.querySelector('#description').value,urgency: document.querySelector('.visit_select').selectedIndex }) 
  
