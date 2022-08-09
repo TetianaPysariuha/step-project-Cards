@@ -9,6 +9,7 @@ class Modal{
     createNode() {
         this._modalElement.className = 'modal';
         this._modalBackgroundContainer.className = 'modal__background';
+        this._modalBackgroundContainer.addEventListener('click', this.deleteNode.bind(this));
         this._modalMainContainer.className = 'modal__main-container flex-column';
         this._modalCloseBtn.className = 'modal__close-btn flex-column';
         this._modalCloseBtn.innerText = 'X';
