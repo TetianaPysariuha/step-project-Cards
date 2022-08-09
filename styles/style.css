@@ -1,0 +1,36 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.modal__background{
+    background-color: rgba(0, 0, 0, 0.8);
+}
+.modal__main-container{
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+    background-color: rgba(240, 248, 255, 1);
+    max-width: 680px;
+}
+.flex-column{
+    display: flex;
+    flex-direction: column;
+}
+.modal__close-btn{
+    background-color: rgba(165,42,42,0.8);
+    border: 1px solid rgba(165,42,42,1);
+    text-align: end;
+    vertical-align: middle;
+    align-self: end;
+    color: white;
+    font-weight: 900;
+    font-size: 18px;
+    padding: 0 5px;
+    cursor: pointer;
+}
+.modal__close-btn:hover{
+    background-color: rgba(165,42,42,1);
+}
+.modal__close-btn:active{
+    background-color: rgba(165,42,42,0.6);
+}
