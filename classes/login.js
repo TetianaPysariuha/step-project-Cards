@@ -52,10 +52,42 @@ class Login extends Modal{
 
 
             const login = async () =>{
-             const {status,data} =  await instance.post('/login',{email:input[0].value,password:input[1].value})
+                try{
+             const {status,data} =  await instance.post('/login',{email:document.querySelector('#email').value,password:document.querySelector('#password').value})
                 console.log(data)
               localStorage.setItem('token',data)
-                  renderCards()  
+                  renderCards() 
+                
+                
+         this.closeModal()
+          const loginBtn = document.querySelector('.login_btn')
+
+          loginBtn.innerHTML = 'Cоздать новую карту'
+          loginBtn.removeEventListener('click',createLogin)
+
+         loginBtn.addEventListener('click',createCards)
+         const logOutBtn = document.createElement('button')
+         logOutBtn.innerHTML = 'Выйти'
+         logOutBtn.classList.add('logout_btn')
+         const header = document.querySelector('header')
+         header.append(logOutBtn)
+       
+        logOutBtn.addEventListener('click',() =>{
+       
+         
+       
+         localStorage.clear()
+         document.location.reload()
+        
+       })
+             
+                
+                
+                }
+                  catch(err){
+                      console.log(err)
+                      alert('Invalid email or password')
+                  }
             }
 
           login()
@@ -80,25 +112,7 @@ class Login extends Modal{
                 )*/
          
       
-           this.closeModal()
-          const loginBtn = document.querySelector('.login_btn')
-
-          loginBtn.innerHTML = 'Cоздать новую карту'
-          loginBtn.removeEventListener('click',createLogin)
-
-         loginBtn.addEventListener('click',createCards)
-        
-         const logOutBtn = document.createElement('button')
-         logOutBtn.innerHTML = 'Выйти'
-         logOutBtn.classList.add('logout_btn')
-         const header = document.querySelector('header')
-         header.append(logOutBtn)
-       logOutBtn.addEventListener('click',() =>{
-       
-         localStorage.clear()
-         document.location.reload()
-        
-       })   
+          
          
         })
 
