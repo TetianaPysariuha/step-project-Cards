@@ -4,15 +4,16 @@ const filterCards = () =>{
 let target = event.target
 
 const cardsForFilter = JSON.parse(localStorage.getItem('cards'))
+console.log(cardsForFilter)
 
 console.log( typeof  +target.value)
 
 
 
-const filteredCards =cardsForFilter.filter(el  =>el.doctor === target.value || el.age === target.value || el.name === target.value || el.description === target.value || el.urgency === +target.value)
+const filteredCards =cardsForFilter.filter(({doctor,age,name,description,urgency}) =>doctor.includes(target.value) || age.includes(target.value)|| name.includes(target.value) || urgency.includes(target.value) || description.includes(target.value) )
 console.log(filteredCards)
 
-console.log(filteredCards == [])
+
 
 const container = document.querySelector('.container')
 container.innerHTML = ''
