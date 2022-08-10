@@ -8,12 +8,7 @@ class VisitTherapist extends Visit{
 
     createElements() {
         super.createElements();
-        this.form.insertAdjacentHTML('beforeend', `<label for="pressure">Обычное давление</label>
-        <input id="pressure" type="text">
-        <label for="mass-body-index">Индекс массы тела</label>
-        <input id="mass-body-index" type="text">
-        <label for="heart-diseases">Перенесенные заболевания сердечно-сосудистой системы</label>
-        <textarea id="heart-diseases" rows="10"></textarea>
+        this.form.insertAdjacentHTML('beforeend', `
         <label for="age">Возраст</label>
         <input id="age" type="number">`);
         this.submitBtn.addEventListener('click', this.postCard.bind(this));
@@ -29,9 +24,6 @@ class VisitTherapist extends Visit{
                         purpose:document.querySelector('#purpose').value,
                         description:document.querySelector('#description').value,
                         urgency: urgencySelector.options[urgencySelector.selectedIndex].text,
-                        pressure:document.querySelector('#pressure').value,
-                        massBodyIndex:document.querySelector("#mass-body-index").value,
-                        heartDiseases:document.querySelector("#heart-diseases").value,
                         age:document.querySelector("#age").value});
     }
 }
