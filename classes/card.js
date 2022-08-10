@@ -8,29 +8,37 @@ constructor(id,name,doctor,purpose,description,urgency){
 this._purpose = purpose;
 this._id = id
 this._description = description;
-this._urgency = urgency;
 this._name = name;
 this.doctor = doctor;
+this._urgency = urgency;
 this.cardContainer = document.createElement('div')
 this.showMoreBtn = document.createElement('button')
 this.deleteBtn = document.createElement('button')
 this.editBtn = document.createElement('button')
+this.ul = document.createElement('ul')
+  
 
+    
 }
 createElements(){
+   
 this.cardContainer.classList.add('card_container')
+this.cardContainer.draggable = 'true'
 this.showMoreBtn.classList.add('show_btn')
 this.deleteBtn.classList.add('delete_btn')
 this.editBtn.classList.add('edit_btn')
 this.showMoreBtn.innerHTML ='Показать больше'
 this.deleteBtn.innerHTML = 'Удалить'
 this.editBtn.innerHTML = 'Редактировать'
-this.cardContainer.append(this.deleteBtn)
+this.ul.classList.add('show_more')
+   
 this.cardContainer.append(this.editBtn)
+this.cardContainer.append(this.deleteBtn)
+
 this.cardContainer.insertAdjacentHTML('beforeend',`
 <ul>
-<li>ФИО:${this._name}</li>
-<li>Доктор:${this.doctor}</li>
+<li><span>ФИО:</span>${this._name}</li>
+<li><span>Доктор:</span>${this.doctor}</li>
 </ul>
 `)
 
@@ -40,17 +48,19 @@ this.cardContainer.append(this.showMoreBtn)
 this.showMoreBtn.addEventListener('click',()=>{
 
 const showMore = document.querySelector('.show_more')
-if(showMore){showMore.remove()}
+if(showMore){showMore.remove()
+}
+this.cardContainer.append(this.ul)
+   this.ul.insertAdjacentHTML('beforeend',`
 
-    this.cardContainer.insertAdjacentHTML('beforeend',`
-    <ul class = "show_more">
-<li>Цель визита:${this._purpose}</li>
-<li>Краткое описание визита:${this._description}</li>
-<li>Срочность:${this._urgency}</li>
+<li><span>Цель визита:</span>${this._purpose}</li>
+<li><span>Краткое описание визита:</span>${this._description}</li>
+<li><span>Срочность:</span>${this._urgency}</li>
 
-</ul>
+
     `)
-
+   document.querySelectorAll('.card_container').forEach(el =>el.style.height = '170px' )
+this.cardContainer.style.height = '300px'
 })
 this.deleteBtn.addEventListener('click',()=>{
     console.log(this._id)
@@ -63,6 +73,13 @@ this.deleteBtn.addEventListener('click',()=>{
 
   this.cardContainer.remove()  
 })
+
+
+
+
+  
+
+  
 }
 render(selector){
 this.createElements()
