@@ -13,7 +13,6 @@ class VisitTherapist extends Visit{
         <input id="age" type="number">`);
         this.submitBtn.addEventListener('click', this.postCard.bind(this));
         this.form.append(this.submitBtn);
-        this.form.append()
     }
 
     postCard() {
