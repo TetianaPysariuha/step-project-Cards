@@ -5,6 +5,7 @@ const deleteCardFunc = async (id, someDeleteFunction)=>{
         debugger;
         const {status} = await instance.delete(`/${id}`);
         if (status === 200){
+            deleteCardStorage(id);
             someDeleteFunction();
         } 
     }
