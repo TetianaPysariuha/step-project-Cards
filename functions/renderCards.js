@@ -27,7 +27,7 @@ const renderCards = () => {
       if (el.doctor === 'cardiologist') {
         new CardforCardiologist(el.id, el.name, el.doctor, el.purpose, el.description, el.urgency, el.pressure, el.weight, el.age, 'заболевания').render('.container')
       }
-      else if (el.doctor === 'dentist') {
+      else if (el.doctor === 'Dantist') {
         new CardforDentist(el.id, el.name, el.doctor, el.purpose, el.description, el.urgency, el.lastVisitDate).render('.container')
       }
       else {
