@@ -17,7 +17,6 @@ class VisitTherapist extends Visit{
     }
 
     postCard() {
-        debugger;
         const urgencySelector = document.querySelector('.visit_select');
         postNewCards({doctor:'Therapist',
                         name:document.querySelector('#name').value,
