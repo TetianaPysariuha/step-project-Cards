@@ -2,8 +2,8 @@ import Visit from "./visit.js";
 import instance from "../functions/instance.js";
 import Card from "./card.js";
 import postNewCards from "../functions/postCardFunc.js";
-import renderAfterReloadwithAddedCard from "../functions/renderCardsAfterAddNewCardAndReload.js";
-
+import renderAfterReloadwithAddedCard from "../functions/renderCardsAfterAddNewCardAndReload.js"
+import getUrgency from "../functions/getUrgency.js"
 
 class VisitCardiologist extends Visit{
 constructor(){
@@ -45,8 +45,20 @@ const input = document.querySelectorAll('input')
 
    }
    createCard()*/
-   
-  postNewCards({doctor:'cardiologist',name:document.querySelector('#name').value,age:document.querySelector('#age').value,pressure:document.querySelector('#pressure').value,weight:document.querySelector('#weight').value,purpose:document.querySelector('#purpose').value,description:document.querySelector('#description').value,urgency: document.querySelector('.visit_select').selectedIndex }) 
+let urgencyPost
+
+   document.querySelector('.visit_select').selectedIndex 
+
+ 
+   if (document.querySelector('.visit_select').selectedIndex === 1){
+    urgencyPost = 'обычная'
+ }else if(document.querySelector('.visit_select').selectedIndex === 2){
+    urgencyPost = 'приоритетная'
+ }else{ urgencyPost = 'неотложная'}
+
+  
+   console.log(getUrgency())
+  postNewCards({doctor:'cardiologist',name:document.querySelector('#name').value,age:document.querySelector('#age').value,pressure:document.querySelector('#pressure').value,weight:document.querySelector('#weight').value,purpose:document.querySelector('#purpose').value,disease:document.querySelector('#diseases').value,description:document.querySelector('#description').value,urgency: urgencyPost }) 
  
     
        
@@ -56,7 +68,7 @@ const input = document.querySelectorAll('input')
   
 }
 
-
+т
 render(selector){
     this.createElements()
     document.querySelector(selector).append(this.form);
