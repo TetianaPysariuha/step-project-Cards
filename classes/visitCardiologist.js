@@ -27,9 +27,7 @@ class VisitCardiologist extends Visit {
       this.form.append(this.submitBtn)
       this.form.addEventListener('submit', (e) => {
          e.preventDefault()
-
          const input = document.querySelectorAll('input')
-
 
          let urgencyPost
 
@@ -42,13 +40,7 @@ class VisitCardiologist extends Visit {
             urgencyPost = 'приоритетная'
          } else { urgencyPost = 'неотложная' }
 
-
-         console.log(getUrgency())
          postNewCards({ doctor: 'cardiologist', name: document.querySelector('#name').value, age: document.querySelector('#age').value, pressure: document.querySelector('#pressure').value, weight: document.querySelector('#weight').value, purpose: document.querySelector('#purpose').value, disease: document.querySelector('#diseases').value, description: document.querySelector('#description').value, urgency: urgencyPost })
-
-
-
-
 
       })
 

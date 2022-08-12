@@ -4,19 +4,18 @@ import renderAfterReloadwithAddedCard from "./renderCardsAfterAddNewCardAndReloa
 import renderCardForDifferentDoctors from "./renderForDifferentDoctors.js"
 
 
-const postNewCards = async (obj) =>{
-   
-  
-    const {status,data} =  await instance.post('',obj)
-       console.log(data)
-     // const newCard = new Card(data.id,data.name,data.doctor,data.purpose,data.description,data.urgency)
-     // newCard.render('.container')
-        renderCardForDifferentDoctors(data)
+const postNewCards = async (obj) => {
 
-      localStorage.setItem('newcard',JSON.stringify(data))
-          
-  renderAfterReloadwithAddedCard() 
 
-   }
+  const { status, data } = await instance.post('', obj)
+  console.log(data)
 
-   export default postNewCards
+  renderCardForDifferentDoctors(data)
+
+  localStorage.setItem('newcard', JSON.stringify(data))
+
+  renderAfterReloadwithAddedCard()
+
+}
+
+export default postNewCards

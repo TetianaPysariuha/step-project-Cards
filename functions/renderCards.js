@@ -10,22 +10,18 @@ import CardforTherapist from "../classes/cardforTherapist.js";
 const renderCards = () => {
   const result = async () => {
 
-    const data = await getCards()
+ const data = await getCards()
 
-
-
-    return data
+  return data
   }
   let cardsArr = result()
 
   cardsArr.then(result => {
     console.log(result)
 
-
-
     result.forEach(el => {
       if (el.doctor === 'cardiologist') {
-        new CardforCardiologist(el.id, el.name, el.doctor, el.purpose, el.description, el.urgency, el.pressure, el.weight, el.age, 'заболевания').render('.container')
+        new CardforCardiologist(el.id, el.name, el.doctor, el.purpose, el.description, el.urgency, el.pressure, el.weight, el.age,el.disease ).render('.container')
       }
       else if (el.doctor === 'Dantist') {
         new CardforDentist(el.id, el.name, el.doctor, el.purpose, el.description, el.urgency, el.lastVisitDate).render('.container')
@@ -34,15 +30,9 @@ const renderCards = () => {
 
         new CardforTherapist(el.id, el.name, el.doctor, el.purpose, el.description, el.urgency, el.age).render('.container')
       }
+})
 
-
-    }
-    )
-
-
-
-
-  })
+})
 
   const filter = new Filter()
   filter.render('.filter_container2')
