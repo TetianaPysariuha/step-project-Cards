@@ -89,11 +89,7 @@ class Login extends Modal {
 
 
     }
-    render(selector) {
-        this.createElements();
-
-        document.querySelector(selector).append(this._modalElement);
-    }
+  
 
 }
 
