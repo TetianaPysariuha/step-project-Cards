@@ -1,9 +1,7 @@
 import Visit from "./visit.js";
-import instance from "../functions/instance.js";
-import Card from "./card.js";
 import postNewCards from "../functions/postCardFunc.js";
-import renderAfterReloadwithAddedCard from "../functions/renderCardsAfterAddNewCardAndReload.js"
-import getUrgency from "../functions/getUrgency.js"
+
+
 
 class VisitCardiologist extends Visit {
    constructor() {
@@ -27,30 +25,26 @@ class VisitCardiologist extends Visit {
       this.form.append(this.submitBtn)
       this.form.addEventListener('submit', (e) => {
          e.preventDefault()
-         const input = document.querySelectorAll('input')
 
-         let urgencyPost
+         const urgencyValue = document.querySelector('.visit_select')
 
-         document.querySelector('.visit_select').selectedIndex
-
-
-         if (document.querySelector('.visit_select').selectedIndex === 1) {
-            urgencyPost = 'обычная'
-         } else if (document.querySelector('.visit_select').selectedIndex === 2) {
-            urgencyPost = 'приоритетная'
-         } else { urgencyPost = 'неотложная' }
-
-         postNewCards({ doctor: 'cardiologist', name: document.querySelector('#name').value, age: document.querySelector('#age').value, pressure: document.querySelector('#pressure').value, weight: document.querySelector('#weight').value, purpose: document.querySelector('#purpose').value, disease: document.querySelector('#diseases').value, description: document.querySelector('#description').value, urgency: urgencyPost })
+         postNewCards({
+            doctor: 'cardiologist',
+            name: document.querySelector('#name').value,
+            age: document.querySelector('#age').value,
+            pressure: document.querySelector('#pressure').value,
+            weight: document.querySelector('#weight').value,
+            purpose: document.querySelector('#purpose').value,
+            disease: document.querySelector('#diseases').value,
+            description: document.querySelector('#description').value,
+            urgency: urgencyValue.options[urgencyValue.selectedIndex].text
+         })
 
       })
 
    }
 
-   т
-   render(selector) {
-      this.createElements()
-      document.querySelector(selector).append(this.form);
-   }
+
 
 }
 
