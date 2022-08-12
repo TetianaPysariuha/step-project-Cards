@@ -1,7 +1,9 @@
 
 import getCards from "../functions/getCards.js";
 import instance from "../functions/instance.js";
-
+//import deleteCard from "../functions/deleteCard.js";
+//import renderAfterReloadandDelete from "../functions/renderAfterReloadAndDelete.js";
+//import renderAfterReloadandDelete from "../functions/renderAfterReloadAndDelete.js";
 
 class Card{
 constructor(id,name,doctor,purpose,description,urgency){
@@ -62,18 +64,19 @@ this.cardContainer.append(this.ul)
    document.querySelectorAll('.card_container').forEach(el =>el.style.height = '170px' )
 this.cardContainer.style.height = '300px'
 })
-this.deleteBtn.addEventListener('click',()=>{
+/*this.deleteBtn.addEventListener('click',()=>{
     console.log(this._id)
 
    const deleteCard = async ()=>{
         const result = await instance.delete(`/${this._id}`)
         console.log(result)
+    
     }
     deleteCard()
-
-  this.cardContainer.remove()  
-})
-
+    localStorage.setItem('deletedcard',this._id)
+  renderAfterReloadandDelete()
+ // this.cardContainer.remove()  
+})*/
 
 
 
@@ -86,7 +89,7 @@ this.createElements()
 
 
 document.querySelector(selector).append(this.cardContainer)
-//document.querySelector('h1').innerHTML = ''
+
 }
     
 }
