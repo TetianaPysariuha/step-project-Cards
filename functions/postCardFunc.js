@@ -6,15 +6,18 @@ import renderCardForDifferentDoctors from "./renderForDifferentDoctors.js"
 
 const postNewCards = async (obj) => {
 
+  try {
+    const { status, data } = await instance.post('', obj)
+    if (status === 200) {
+      console.log(data)
 
-  const { status, data } = await instance.post('', obj)
-  console.log(data)
+      renderCardForDifferentDoctors(data)
 
-  renderCardForDifferentDoctors(data)
+      localStorage.setItem('newcard', JSON.stringify(data))
 
-  localStorage.setItem('newcard', JSON.stringify(data))
-
-  renderAfterReloadwithAddedCard()
+      renderAfterReloadwithAddedCard()
+    }
+  } catch (err) { console.log(err) }
 
 }
 
