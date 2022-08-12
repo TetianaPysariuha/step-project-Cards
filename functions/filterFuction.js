@@ -8,9 +8,10 @@ console.log(cardsForFilter)
 
 console.log( typeof  +target.value)
 
+let filteredCards;
 
 
-const filteredCards =cardsForFilter.filter(({doctor,age,name,description,urgency}) =>doctor.includes(target.value) || age.includes(target.value)|| name.includes(target.value) || urgency.includes(target.value) || description.includes(target.value) )
+filteredCards =cardsForFilter.filter(({doctor,name,description,urgency,purpose}) =>doctor.includes(target.value) || name.includes(target.value) || urgency.includes(target.value) || description.includes(target.value) || purpose.includes(target.value))
 console.log(filteredCards)
 
 
