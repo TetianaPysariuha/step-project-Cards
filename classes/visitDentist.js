@@ -6,4 +6,4 @@ class visitDentist extends Visit{
 
 }
 
-export default visitDentist;
+export default visitDentist;g
