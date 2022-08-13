@@ -27,7 +27,7 @@ class VisitDentist extends Visit{
                         purpose: document.querySelector('#purpose').value,
                         description: document.querySelector('#description').value,
                         urgency: urgencySelector.options[urgencySelector.selectedIndex].text,
-                        lastVisitDate: document.querySelector('#visit-date').value});
+                        lastvisitdate: document.querySelector('#visit-date').value});
 
         document.querySelector('.modal').remove();
     }

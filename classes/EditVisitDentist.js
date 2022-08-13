@@ -43,7 +43,7 @@ class EditVisitDentist extends Visit{
                             purpose: this._cardObj._purpose,
                             description: this._cardObj._description,
                             urgency: this._cardObj._urgency,
-                            lastVisitDate: this._cardObj._dateVisited});
+                            lastvisitdate: this._cardObj._dateVisited});
 
         refreshCard(this._cardObj);
         this._modalContainer.closeModal();
