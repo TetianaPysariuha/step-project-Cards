@@ -17,6 +17,11 @@ const renderCards = () => {
   let cardsArr = result()
 
   cardsArr.then(result => {
+
+    if(result.length === 0 ){
+      document.querySelector('.container').insertAdjacentHTML('beforeend','<h1>No items added</h1>')}else{
+        document.querySelector('.container').innerHTML = ''
+      }
     console.log(result)
 
     result.forEach(el => {

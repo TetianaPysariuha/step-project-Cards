@@ -11,7 +11,11 @@ function renderCardsAfterReload() {
   let cardsArr = JSON.parse(localStorage.getItem('cards'))
 
   console.log(cardsArr)
-
+  if(cardsArr.length === 0 ){
+    document.querySelector('.container').insertAdjacentHTML('beforeend','<h1>No items added</h1>')}else{
+      document.querySelector('h1').remove()
+    }
+   
   cardsArr.forEach(el => {
 
     if (el.doctor === 'cardiologist') {
