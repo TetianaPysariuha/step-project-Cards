@@ -39,7 +39,7 @@ class EditVisitDentist extends Visit{
         changeCardFuncApi(this._cardObj._id, 
                         {id: this._cardObj._id,
                             name: this._cardObj._name,
-                            doctor: 'dеntist',
+                            doctor: 'dentist',
                             purpose: this._cardObj._purpose,
                             description: this._cardObj._description,
                             urgency: this._cardObj._urgency,
