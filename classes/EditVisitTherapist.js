@@ -1,7 +1,7 @@
 import Visit from './visit.js';
 import changeCardFuncApi from '../functions/changeCardFuncAPI.js'
 import Modal from './modal.js';
-/* import CardforTherapist from './cardforTherapist.js'; */
+import refreshCard from '../functions/refreshCard.js';
 
 class EditVisitTherapist extends Visit{
     constructor(cardObj) {
@@ -43,15 +43,7 @@ class EditVisitTherapist extends Visit{
                             urgency: this._cardObj._urgency,
                             age: this._cardObj._age});
 
-/*         this._cardObj.deleteCards(); */
-
-/*         new CardforTherapist(this._cardObj._id, 
-                            this._cardObj._name, 
-                            'therapist', 
-                            this._cardObj._purpose, 
-                            this._cardObj._description, 
-                            this._cardObj._urgency,
-                            this._cardObj._age).render('.container'); */
+        refreshCard(this._cardObj);
         this._modalContainer.closeModal();
     }
 

@@ -1,7 +1,7 @@
 import Visit from './visit.js';
 import changeCardFuncApi from '../functions/changeCardFuncAPI.js'
 import Modal from './modal.js';
-/* import CardforDentist from './cardforDentist.js'; */
+import refreshCard from '../functions/refreshCard.js';
 
 class EditVisitDentist extends Visit{
     constructor(cardObj) {
@@ -45,15 +45,7 @@ class EditVisitDentist extends Visit{
                             urgency: this._cardObj._urgency,
                             lastVisitDate: this._cardObj._dateVisited});
 
-/*         this._cardObj.deleteCards(); */
-      
-/*         new CardforDentist(this._cardObj._id, 
-                            this._cardObj._name, 
-                            'dеntist', 
-                            this._cardObj._purpose, 
-                            this._cardObj._description, 
-                            this._cardObj._urgency,
-                            this._cardObj._dateVisited).render('.container'); */
+        refreshCard(this._cardObj);
         this._modalContainer.closeModal();
     }
 

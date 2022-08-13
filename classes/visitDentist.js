@@ -11,7 +11,8 @@ class VisitDentist extends Visit{
         super.createElements();
         this.submitBtn.value = 'Создать визит';
         this.submitBtn.classList.add('btn_for_dentist');
-        this.form.insertAdjacentHTML('beforeend', `<label for="visit-date">Дата последнего посещения</label>
+        this.form.insertAdjacentHTML('beforeend', `
+        <label for="visit-date">Дата последнего посещения</label>
         <input id="visit-date" type="date">`);
         this.submitBtn.addEventListener('click', (event) =>{
             event.preventDefault();

@@ -10,7 +10,7 @@ const deleteCardFuncAPI = async (cardObj)=>{
         } 
     }
     catch(error){
-        console.error(`deleteCardFunc. The server returned status: ${error} - `);
+        console.error(`deleteCardFunc. The server returned status: ${error} ${error?.response?.data} `);
     }
 }
 

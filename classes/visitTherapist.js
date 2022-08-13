@@ -18,7 +18,6 @@ class VisitTherapist extends Visit{
             event.preventDefault();
             this.postCard()});
         this.form.append(this.submitBtn);
-
     }
 
     postCard() {

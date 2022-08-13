@@ -2,7 +2,6 @@ import instance from "./instance.js";
 import handleResultChangeCard from './handleResultChangeCard.js'
 
 const changeCardFuncApi = async (id, obj)=>{
-    console.log(obj);
     try{
         const {status, data} = await instance.put(`/${id}`, obj);
         if(status === 200) {
@@ -10,7 +9,7 @@ const changeCardFuncApi = async (id, obj)=>{
         }
     }   
     catch(error){
-        console.error(`changeCardFunc. The server returned status: ${error} - ${error.response.data}`);
+        console.error(`changeCardFunc. The server returned status: ${error} ${error?.response?.data}`);
     }
 }
 
