@@ -9,7 +9,7 @@ class VisitDentist extends Visit{
 
     createElements() {
         super.createElements();
-        this.submitBtn.value = 'Создать визит';
+        this.submitBtn.innerHTML = 'Создать визит';
         this.submitBtn.classList.add('btn_for_dentist');
         this.form.insertAdjacentHTML('beforeend', `
         <label for="visit-date">Дата последнего посещения</label>
