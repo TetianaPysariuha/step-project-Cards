@@ -1,12 +1,12 @@
 import instance from "./instance.js";
-import changeCardStorage from '././changeCardStorage.js';
+import handleResultChangeCard from './handleResultChangeCard.js'
 
-const changeCardFunc = async (id, obj, someCallbackFunc)=>{
+const changeCardFuncApi = async (id, obj)=>{
+    console.log(obj);
     try{
         const {status, data} = await instance.put(`/${id}`, obj);
         if(status === 200) {
-            changeCardStorage(id, data);
-            someCallbackFunc(data);
+            handleResultChangeCard(data);
         }
     }   
     catch(error){
@@ -14,4 +14,4 @@ const changeCardFunc = async (id, obj, someCallbackFunc)=>{
     }
 }
 
-export default changeCardFunc;
+export default changeCardFuncApi;
