@@ -49,3 +49,4 @@ class VisitCardiologist extends Visit {
 }
 
 export default VisitCardiologist;
+

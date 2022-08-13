@@ -1,6 +1,7 @@
 import Card from "./card.js";
 
 
+
 class CardforCardiologist extends Card{
 
 constructor(id,name,doctor,purpose,description,urgency,pressure,weight,age,disease){
@@ -16,15 +17,30 @@ this._disease =disease;
 
 createElements(){
 super.createElements();
-this.ul.insertAdjacentHTML('beforeend',`
+
+this.showMoreBtn.addEventListener('click',()=>{
+
+    const showMore = document.querySelector('.show_more')
+    if(showMore){showMore.remove()
+     this.ul.innerHTML = ''   
+    }
+    this.cardContainer.append(this.ul)
+    
+       this.ul.insertAdjacentHTML('beforeend',`
+    
+    <li><span>Цель визита:</span>${this._purpose}</li>
+    <li><span>Краткое описание визита:</span>${this._description}</li>
+    <li><span>Срочность:</span>${this._urgency}</li>
 <li><span>Обычное давление:</span>${this._pressure}</li>
 <li><span>Индекс массы тела:</span>${this._weight}</li>
 <li><span>Возраст:</span>${this._age}</li>
 <li><span>Перенесеные заболевания:</span>${this._disease}</li>
 `)
-
-
-
+    
+        
+       document.querySelectorAll('.card_container').forEach(el =>el.style.height = '170px' )
+    this.cardContainer.style.height = '300px'
+    })
 
 
 }

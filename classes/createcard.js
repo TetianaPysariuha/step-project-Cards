@@ -1,5 +1,4 @@
 
-import getUrgency from "../functions/getUrgency.js"
 import Modal from "./modal.js"
 import VisitCardiologist from "./visitCardiologist.js"
 import VisitDentist from "./visitDentist.js"
