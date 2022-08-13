@@ -12,6 +12,7 @@ class EditVisitTherapist extends Visit{
     
     createElements(){
         super.createElements();
+        this.form.classList.add('edit-form')
         this.form.insertAdjacentHTML('beforeend', `
         <label for="age">Возраст</label>
         <input id="age" type="number">`);

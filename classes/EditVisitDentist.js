@@ -12,6 +12,7 @@ class EditVisitDentist extends Visit{
     
     createElements(){
         super.createElements();
+        this.form.classList.add('edit-form')
         this.form.insertAdjacentHTML('beforeend', `
         <label for="visit-date">Дата последнего посещения</label>
         <input id="visit-date" type="date">`);

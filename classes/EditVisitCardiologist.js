@@ -12,6 +12,7 @@ class EditVisitCardiologist extends Visit{
     
     createElements(){
         super.createElements();
+        this.form.classList.add('edit-form')
         this.form.insertAdjacentHTML('beforeend', `
         <label for="pressure">Ваше обычное давление</label>
         <input id ="pressure" type ="text" value="">
