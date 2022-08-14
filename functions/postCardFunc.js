@@ -16,6 +16,8 @@ const postNewCards = async (obj) => {
       localStorage.setItem('newcard', JSON.stringify(data))
 
       renderAfterReloadwithAddedCard()
+       const titleforEmptyPage = document.querySelector('h1')
+    if(titleforEmptyPage){titleforEmptyPage.remove()}
     }
   } catch (err) { console.log(err) }
 
