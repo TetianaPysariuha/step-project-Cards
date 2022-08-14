@@ -25,7 +25,6 @@ this.form.append(this.submitBtn)
 this.form.addEventListener('submit',(e)=>{
 e.preventDefault()
 
-const input = document.querySelectorAll('input')
 
 
 let urgencyPost
