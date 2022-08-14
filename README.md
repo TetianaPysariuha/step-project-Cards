@@ -13,6 +13,6 @@ Step project "Cards"; Course: Advanced Js;  DanIt  group: FE online; Members: Vi
   -  получение карт с сервера(функция getCards- GET запрос),class Card class CardforDentist class CardforTherapist class Modal отрисовка карт для разных докторов  class Filter функция для фильтрации карточек (filterFunc),стили проэкта.
 
  ### Татьяна Писарюга(Tetiana Pysariuha)
-  - классы visitDenntist visitTherapist editVisitTherapist editVisitCardiologist editVisitDentist запросы PUT и DELETE на сервер удаление и редактирование карт отрисовка карт после добавления или удаления,функции:changeCardFuncApi
+  - классы visitDenntist visitTherapist editVisitTherapist editVisitCardiologist editVisitDentist запросы PUT и DELETE на сервер удаление и редактирование карт отрисовка карт после изменения(редактирования) или удаления,функции:changeCardFuncApi
 changeCardStorage,deleteCardFuncAPI,deleteCardStorage,editCard,handleResultChangeCard,deleteCardStorage,refreshCard,getUrgencyIndex.
 
