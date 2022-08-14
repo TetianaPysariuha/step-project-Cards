@@ -34,7 +34,7 @@ class Filter {
         
         this.filterBtn.addEventListener('click', () => {
             this.filterForm.append(this.filterSelect)
-
+            this.filterSelect.innerHTML = ''
             this.filterSelect.insertAdjacentHTML('beforeend', `  <option disabled>Cрочность визита</option>
         <option value="">обычная</option>
        <option value="">приортетная</option>
