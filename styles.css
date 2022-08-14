@@ -2,12 +2,28 @@ header{
     width: 100%;
     height: 100px;
     display: flex;
-    background: lavenderblush;
+    background: black;
+    opacity: 90%;
    justify-content: space-between;
    align-items: center;
 }
+.logo {
+    display: flex;
+    color: #ee5555;
+    align-items: center;
+}
+.logo__img{
+    width: 100px;
+    height: 100px;
+}
+.login_btn {
+    border-radius: 15px;
+    border-color: black;
+    background-color: #67b0d9;
+    padding: 6px;
+}
 
-.login_btn{
+.logo_btn{
     width: 100px;
     height: 40px;
     background: green;
@@ -18,19 +34,75 @@ header{
 }
 
 .logout_btn{
-    width: 100px;
-    height: 40px;
-    background: green;
+   
+    background: #67b0d9;
     border:none;
-    color:#fff;
-    justify-self: end;
-    border-radius: 5px;
+    border-radius: 15px;
+    padding: 6px;
+    margin-right: 10px;
 
 
 }
+.filter_form {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    gap: 10px;
+    margin: 10px;
+}
+#filter {
+    width: 300px;
+    border-radius: 15px;
+    border-color: black;
+    padding: 6px;
+}
+.container{
+    background: url(./img/bg1.jpeg)center no-repeat;
+    background-attachment: fixed;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    margin: 0 auto;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-content: flex-start;
+}
 
 .card_container{
-    border: 1px solid black;
+   /*  background: url(./img/bg2.jpeg) no-repeat;  */
+    opacity: 75%;
+    border: 2px solid #1c2367;
+    background-color: #e6ebf9;
+    border-radius: 15px;
+    padding: 10px;
+    margin: 20px;
+    width: 250px;
+    height: 200px;
+}
+.edit_btn {
+    top: 10px;
+    left: 12px;
+    padding: 4px;
+    border-radius: 15px;
+    background-color: #67b0d9;
+}
+.delete_btn {
+    padding: 4px;
+    background-color: #ee5555;
+    border-radius: 15px;
+    top: 9px;
+    left: 200px;
+    margin-left: 80px;
+}
+.show_btn {
+    padding: 4px;
+    border-radius: 15px;
+    background-color: #67b0d9;
+    margin-left: 67px;
 }
 .modal {
     position: fixed;
@@ -59,7 +131,8 @@ header{
 
 .modal__main-container {
     z-index: 2;
-    background: white;
+    /*  background: url(./img/bg2.jpeg) no-repeat;  */ 
+    background: #e6ebf9;
     border: 1px solid lightgrey;
     border-radius: 5px;
     box-sizing: border-box;
@@ -85,7 +158,7 @@ header{
     background-position: center center;
     cursor: pointer;
     filter: brightness(.9);
-    background-color: tomato;
+    background-color: #ee5555;
    
 }
 
@@ -140,7 +213,7 @@ header{
 }
 
 .modal__cancel-btn {
-    background: tomato;
+    background: #ee5555;
 }
 
 .modal__confirm-btn {
@@ -188,6 +261,15 @@ header{
     background-position: center center;
     cursor: pointer;
     filter: brightness(.9);
-    background-color: tomato;
+    background-color: #ee5555;
     
+}
+.filter_btn{
+   
+    margin-left: 230px;
+  margin-top: 30px;
+  background-color: #67b0d9;
+
+  border-radius: 15px;
+  padding:10px 15px;
 }

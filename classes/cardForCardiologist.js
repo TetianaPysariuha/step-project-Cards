@@ -39,7 +39,7 @@ this.showMoreBtn.addEventListener('click',()=>{
     
         
        document.querySelectorAll('.card_container').forEach(el =>el.style.height = '170px' )
-    this.cardContainer.style.height = '300px'
+    this.cardContainer.style.height = '350px'
     })
 
 
