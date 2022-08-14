@@ -44,11 +44,6 @@ class Login extends Modal {
 
             const input = document.querySelectorAll('input')
 
-            console.log(input[0].value)
-            console.log(input[1].value)
-
-
-
             const login = async () => {
                 try {
                     const { status, data } = await instance.post('/login', { email: document.querySelector('#email').value, password: document.querySelector('#password').value })
