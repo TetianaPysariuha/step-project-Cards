@@ -67,7 +67,7 @@ class Filter {
                }})
             document.querySelector('.container').addEventListener('click', (e) => {
                  let filterCard = document.querySelector('.container')
-                 console.log(e.target)
+                 
                  if(e.target === filterCard){
                 
                 document.querySelector('.container').innerHTML = ''
