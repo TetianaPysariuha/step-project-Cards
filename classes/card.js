@@ -1,7 +1,7 @@
 
-//import deleteCardFuncAPI from "../functions/deleteCardFuncAPI.js";
-//import EditVisitCardiologist from "./EditVisitCardiologist.js";
-//import editCard from "../functions/editCard.js";
+import deleteCardFuncAPI from "../functions/deleteCardFuncAPI.js";
+import EditVisitCardiologist from "./EditVisitCardiologist.js";
+import editCard from "../functions/editCard.js";
 
 class Card{
 constructor(id,name,doctor,purpose,description,urgency){
