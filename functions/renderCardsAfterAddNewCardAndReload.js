@@ -16,8 +16,8 @@ const renderAfterReloadwithAddedCard = () => {
     const newCardsArrJSon = JSON.stringify(cardsArr)
 
     localStorage.setItem('cards', newCardsArrJSon)
-document.querySelector('h1').remove()
-
+ const emptyTitle = document.querySelector('h1')
+if(emptyTitle){emptyTitle.remove()}
 }
 
 export default renderAfterReloadwithAddedCard
