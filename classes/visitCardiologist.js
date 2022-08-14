@@ -41,6 +41,8 @@ let urgencyPost
   
   postNewCards({doctor:'cardiologist',name:document.querySelector('#name').value,age:document.querySelector('#age').value,pressure:document.querySelector('#pressure').value,weight:document.querySelector('#weight').value,purpose:document.querySelector('#purpose').value,disease:document.querySelector('#diseases').value,description:document.querySelector('#description').value,urgency: urgencyPost }) 
     this.form.reset()
+     const titleforEmptyPage = document.querySelector('h1')
+    if(titleforEmptyPage){titleforEmptyPage.remove()}
       })
   
 }
