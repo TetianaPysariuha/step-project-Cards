@@ -9,11 +9,11 @@ class VisitDentist extends Visit{
 
     createElements() {
         super.createElements();
-        this.submitBtn.value = 'Создать визит';
+        this.submitBtn.innerHTML = 'Создать визит';
         this.submitBtn.classList.add('btn_for_dentist');
         this.form.insertAdjacentHTML('beforeend', `
-        <label for="visit-date">Дата последнего посещения</label>
-        <input id="visit-date" type="date">`);
+        <label for="visit-date">Дата последнего посещения</label>><br>
+        <input id="visit-date" type="date">><br>`);
         this.submitBtn.addEventListener('click', (event) =>{
             event.preventDefault();
             this.postCard()});
@@ -22,12 +22,12 @@ class VisitDentist extends Visit{
 
     postCard() {
         const urgencySelector = document.querySelector('.visit_select');
-        postNewCards({doctor: 'dеntist',
+        postNewCards({doctor: 'dentist',
                         name: document.querySelector('#name').value,
                         purpose: document.querySelector('#purpose').value,
                         description: document.querySelector('#description').value,
                         urgency: urgencySelector.options[urgencySelector.selectedIndex].text,
-                        lastVisitDate: document.querySelector('#visit-date').value});
+                        lastvisitdate: document.querySelector('#visit-date').value});
 
         document.querySelector('.modal').remove();
     }

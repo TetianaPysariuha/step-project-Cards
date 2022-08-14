@@ -15,7 +15,7 @@ function editCard(cardObj) {
             editTherapist.form.querySelector('.visit_select').selectedIndex = getUrgencyIndex(cardObj._urgency);
             editTherapist.form.querySelector("#age").value = cardObj._age;
             break;
-        case 'DЕNTIST':
+        case 'DENTIST':
             const editDentist = new EditVisitDentist(cardObj);
             editDentist.render();
             editDentist.form.querySelector('#name').value = cardObj._name;

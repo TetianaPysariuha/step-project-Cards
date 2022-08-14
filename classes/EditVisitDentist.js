@@ -12,6 +12,7 @@ class EditVisitDentist extends Visit{
     
     createElements(){
         super.createElements();
+        this.form.classList.add('edit-form')
         this.form.insertAdjacentHTML('beforeend', `
         <label for="visit-date">Дата последнего посещения</label>
         <input id="visit-date" type="date">`);
@@ -34,16 +35,14 @@ class EditVisitDentist extends Visit{
         this._cardObj._urgency = urgencySelector.options[urgencySelector.selectedIndex].text;
         this._cardObj._dateVisited = document.querySelector('#visit-date').value;
 
-
-        console.log(this._cardObj._dateVisited);
         changeCardFuncApi(this._cardObj._id, 
                         {id: this._cardObj._id,
                             name: this._cardObj._name,
-                            doctor: 'dеntist',
+                            doctor: 'dentist',
                             purpose: this._cardObj._purpose,
                             description: this._cardObj._description,
                             urgency: this._cardObj._urgency,
-                            lastVisitDate: this._cardObj._dateVisited});
+                            lastvisitdate: this._cardObj._dateVisited});
 
         refreshCard(this._cardObj);
         this._modalContainer.closeModal();
