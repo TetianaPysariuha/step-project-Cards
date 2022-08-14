@@ -26,7 +26,7 @@ function renderCardsAfterReload() {
     }
    else  {
 
-     new CardforDentist(el.id, el.name, el.doctor, el.purpose, el.description, el.urgency, el.lastVisitDate).render('.container')
+     new CardforDentist(el.id, el.name, el.doctor, el.purpose, el.description, el.urgency, el.lastvisitdate).render('.container')
     }
   })
 
