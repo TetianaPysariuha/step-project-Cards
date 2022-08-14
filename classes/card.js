@@ -1,9 +1,7 @@
 
-import getCards from "../functions/getCards.js";
-import instance from "../functions/instance.js";
-//import deleteCard from "../functions/deleteCard.js";
-//import renderAfterReloadandDelete from "../functions/renderAfterReloadAndDelete.js";
-//import renderAfterReloadandDelete from "../functions/renderAfterReloadAndDelete.js";
+import deleteCardFuncAPI from "../functions/deleteCardFuncAPI.js";
+import EditVisitCardiologist from "./EditVisitCardiologist.js";
+import editCard from "../functions/editCard.js";
 
 class Card{
 constructor(id,name,doctor,purpose,description,urgency){
@@ -45,44 +43,24 @@ this.cardContainer.insertAdjacentHTML('beforeend',`
 `)
 
 this.cardContainer.append(this.showMoreBtn)
+this.editBtn.addEventListener('click',() =>{
+  
+    editCard(this)
 
-
-this.showMoreBtn.addEventListener('click',()=>{
-
-const showMore = document.querySelector('.show_more')
-if(showMore){showMore.remove()
-}
-this.cardContainer.append(this.ul)
-   this.ul.insertAdjacentHTML('beforeend',`
-
-<li><span>Цель визита:</span>${this._purpose}</li>
-<li><span>Краткое описание визита:</span>${this._description}</li>
-<li><span>Срочность:</span>${this._urgency}</li>
-
-
-    `)
-   document.querySelectorAll('.card_container').forEach(el =>el.style.height = '170px' )
-this.cardContainer.style.height = '300px'
 })
-/*this.deleteBtn.addEventListener('click',()=>{
-    console.log(this._id)
+  this.deleteBtn.addEventListener('click',()=>{
+    deleteCardFuncAPI(this)
+   })
+}
+deleteCards(){
 
-   const deleteCard = async ()=>{
-        const result = await instance.delete(`/${this._id}`)
-        console.log(result)
-    
-    }
-    deleteCard()
-    localStorage.setItem('deletedcard',this._id)
-  renderAfterReloadandDelete()
- // this.cardContainer.remove()  
-})*/
-
-
-
-  
-
-  
+this.cardContainer.remove()
+let cardsArr = JSON.parse(localStorage.getItem('cards'))
+if(cardsArr.length === 0 ){
+  document.querySelector('.container').insertAdjacentHTML('beforeend','<h1>No items added</h1>')}
+  else{
+    document.querySelector('h1').remove()
+  }
 }
 render(selector){
 this.createElements()
