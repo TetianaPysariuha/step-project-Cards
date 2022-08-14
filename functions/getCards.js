@@ -1,18 +1,14 @@
 
-import Card from "../classes/card.js"
 import instance from "./instance.js"
-
- const getCards = async () =>{
- const {status,data} = await instance.get('')
-
- localStorage.setItem('cards', JSON.stringify(data))
-
-
-return data
-
-
+const getCards = async () => {
+    try {
+        const { status, data } = await instance.get('')
+        if (status === 200) {
+            localStorage.setItem('cards', JSON.stringify(data))
+        }
+        return data
+    } catch (err) {
+        console.log(err)
+    }
 }
-
-
-
- export default getCards;
+export default getCards;
