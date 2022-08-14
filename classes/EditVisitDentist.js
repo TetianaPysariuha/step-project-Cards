@@ -35,8 +35,6 @@ class EditVisitDentist extends Visit{
         this._cardObj._urgency = urgencySelector.options[urgencySelector.selectedIndex].text;
         this._cardObj._dateVisited = document.querySelector('#visit-date').value;
 
-
-        console.log(this._cardObj._dateVisited);
         changeCardFuncApi(this._cardObj._id, 
                         {id: this._cardObj._id,
                             name: this._cardObj._name,
